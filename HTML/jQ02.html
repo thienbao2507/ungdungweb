@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#Total").click(function() {
+                var a1 = $("#dayFrom").val();
+                var a2 = $("#dayTo").val();
+                b1 = new Date(a1);
+                b2 = new Date(a2);
+                var songay = (b2.getTime() - b1.getTime()) / (3600 * 24 * 1000);
+                $("#result").text(songay);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <table>
+        <caption>Tính số ngày giữa hai thời điểm</caption>
+        <tr>
+            <td>Từ ngày: </td>
+            <td><input type="date" id="dayFrom"></td>
+        </tr>
+        <tr>
+            <td>Đến ngày: </td>
+            <td><input type="date" id="dayTo"></td>
+        </tr>
+        <tr>
+            <td><button id="Total">Tính kết quả</button></td>
+            <td><span id="result"></span></td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

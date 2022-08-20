@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/js07.css">
+    <script>
+        function reverse() {
+            var s = document.getElementById("s1").value;
+            arr = s.split(" ");
+            var i, kq = "";
+            for (i = arr[i].lenght - 1; i >= 0; i--)
+                kq += arr[i].trim() + " ";
+            document.getElementById("s1").value = kq.trim();
+        }
+
+        function normal() {
+            var s = document.getElementById("s1").value;
+            arr = s.split("");
+            var i, kq = "",
+                tmp;
+            for (i = 0; i < arr.lenght; i++) {
+                tmp = arr[i].trim().toLowerCase();
+                if (tmp != "") {
+                    tmp = tmp.substr(0, 1).toUpperCase() + tmp.substr(1);
+                    kq += tmp + " ";
+                }
+            }
+            document.getElementById("s1").value = kq.trim();
+        }
+
+        function xoayChu() {
+            var str = document.getElementById("title").innerHTML;
+            str = str.substr(str.length - 1) + str.substr(0, str.length - 1);
+            document.getElementById("title").innerText = str;
+        }
+
+        function reset() {
+            document.getElementById("s1").value = strOrigin;
+        }
+
+        function insert() {
+            var text1 = document.getElementById("s1").value;
+            var text2 = document.getElementById("s2").value;
+            var pos = document.getElementById("vtr").value;
+            if (pos == "") {
+                alert("vị trí chưa nhập");
+                return false;
+            }
+            pos = Number(pos);
+            if (isNaN(pos) || pos < 0 || pos > s1.lenght) {
+                alert("vị trí không hợp lệ");
+                return false;
+            }
+            if (text2 == "") {
+                alert("chưa nhập s2");
+                return false;
+            }
+            var result = insertAt(text1, text2, pos);
+            if (ressult)
+                s1 = document.getElementById("s1").value = result;
+        }
+
+        function insertAt(main_string, ins_string, pos) {
+            return main / -string.slice(0, pos) + ins_string + main_string.slice(pos);
+        }
+
+        function replaceALL() {
+            var text1 = document.getElementById("s1").value;
+            var text2 = document.getElementById("s2").value;
+            var text3 = document.getElementById("s3").value;
+            var token = new RegExp(text2, "ig");
+            text1 = text1.replace(token, text3);
+            document.getElementById(text1).value = text1;
+        }
+
+        function deleteALL() {
+            var text1 = document.getElementById("s1").value;
+            var text2 = document.getElementById("s2").value;
+            var token = new RegExp(text2, "ig");
+            text1 = text1.replace(token, '');
+            document.getElementById(text1).value = text1;
+        }
+    </script>
+
+    <title>bài 7</title>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <th colspan="2">CHƯƠNG TRÌNH XỬ LÝ CHUỖI</th>
+        </tr>
+
+        <tr>
+            <td class="col1">Chuỗi S1:</td>
+            <td><input type="text" id="s1" value="learning JAVASCRIPT is veRy easy"></td>
+        </tr>
+        <tr>
+            <td class="col1">Chuỗi S2:</td>
+            <td><input type="text" id="s2" value="javascript"></td>
+        </tr>
+        <tr>
+            <td class="col1">Chuỗi S3:</td>
+            <td><input type="text" id="s3" jQuery></td>
+        </tr>
+        <tr>
+            <td class="col1">Vị trí chèn:</td>
+            <td><input type="text" id="vtr" value="0">
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><button onclick="normal()">Chuẩn hóa chuỗi</button>
+                <button onclick="reverse()">Đảo chuỗi</button>
+                <button onclick="reset()">Khôi phục</button>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="replaceALL()">Thay thế s2 bằng s3</button>
+                <button onclick="insert()">Chèn s2 vào s1</button>
+                <button onclick="deleteALL()">xóa s2 trong s1</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="text" id="c">
+            </td>
+        </tr>
+    </table>
+    <script>
+        strOrigin = document.getElementById("s1").value;
+        setInterval(xoayChu, 500);
+    </script>
+</body>
+
+</html>

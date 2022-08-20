@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            padding: 5px solid gray;
+            margin: 5px solid gray;
+            float: left;
+        }
+        
+        #result {
+            clear: left;
+            width: 500px;
+            height: 30px;
+        }
+        
+        #frame {
+            width: 300px;
+            height: 200px;
+            padding: 5px;
+            margin-top: 100px;
+            border: 5px solid gray;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("div").click(function() {
+                var color = $(this).css("background-color");
+                var name;
+                switch (color) {
+                    case "rgb(255, 0, 0)":
+                        name = "Đỏ";
+                        break;
+                    case "rgb(0, 0, 255)":
+                        name = "Xanh Dương";
+                        break;
+                    case "rgb(0, 255, 0)":
+                        name = "Xanh lá";
+                        break;
+                    case "rgb(255, 0, 255)":
+                        name = "Tím";
+                        break;
+
+                }
+                $("#result").html("màu của bạn chọn là: " + name + ": " + color);
+                $("#result").css({
+                    'color': color,
+                    'font-weight': 'bold'
+
+                });
+                $("#frame").css("background-color", color);
+            });
+
+        })
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Click lên các hình vuông</p>
+    <div style="background-color:#00f ;"></div>
+    <div style="background-color:#f00 ;"></div>
+    <div style="background-color:#f0f ;"></div>
+    <div style="background-color:#0f0 ;"></div>
+    <br>
+    <div id="result"></div>
+    <p id="frame"></p>
+</body>
+
+</html>

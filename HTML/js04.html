@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Tinh() {
+            var a = parseInt(document.forms["myform"]["txtSo1"].value);
+            var b = parseInt(document.forms["myform"]["txtSo2"].value);
+            var op = document.forms["myform"]["op"].value;
+            switch (op) {
+                case "+":
+                    kq = a + b;
+                    break;
+                case "-":
+                    kq = a - b;
+                    break;
+                case "*":
+                    kq = a * b;
+                    break;
+                case "/":
+                    if (b != 0)
+                        kq = a / b;
+                    else
+                        kq = "không thể thực hiện phép chia cho 0";
+                    break;
+            }
+            document.forms["myform"]["kq"].value = kq;
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <form id="myform" onsubmit="return Tinh()">
+        <table>
+            <tr>
+                <th colspan="2">
+                    <h2>Các phép tính</h2>
+                </th>
+            </tr>
+            <tr>
+                <td width="30%">số thứ 1</td>
+                <td><input type="text" name="txtSo1"></td>
+            </tr>
+            <tr>
+                <td width="30%">số thứ 2</td>
+                <td><input type="text" name="txtSo2"></td>
+            </tr>
+            <tr>
+                <td>Chọn phép toán</td>
+                <td>
+                    <p>
+                        <input type="radio" name="op" value="+">Cộng <br>
+                        <input type="radio" name="op" value="-">Trừ <br>
+                        <input type="radio" name="op" value="*">Nhân <br>
+                        <input type="radio" name="op" value="/" checked>chia <br>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="btCong" value="Thực hiện">
+                    <input type="reset" value="Hủy">
+                </td>
+                <td><input type="text" name="kq" readonly /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

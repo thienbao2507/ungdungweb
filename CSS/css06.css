@@ -1,0 +1,54 @@
+header {
+    text-align: center;
+    font-size: 4em;
+    text-shadow: 6px 6px 4px #090909;
+    color: blue;
+    font-weight: 800px;
+}
+
+nav {
+    height: 40px;
+    background-color: cadetblue;
+    text-align: center;
+    line-height: 40px;
+}
+
+nav a {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #ffff;
+    text-decoration: none;
+    margin-right: 10px;
+    float: left;
+}
+
+nav a:hover {
+    color: yellow;
+    font-size: 1.5em
+}
+
+img {
+    float: right;
+    height: 300px;
+    width: 400px;
+}
+
+h2 {
+    color: rgb(109, 105, 105);
+}
+
+.btn {
+    font-size: 1.5em;
+    background-color: rgb(134, 174, 238);
+    color: white;
+    font-weight: bolder;
+    height: 50px;
+    width: 250px;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.btn:hover {
+    background-color: cyan;
+    color: yellow;
+}

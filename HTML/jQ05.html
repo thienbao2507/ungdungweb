@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ05: ZOOM PICTURE</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        img {
+            width: 200px;
+            height: 150px;
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("img").mouseover(function() {
+                    $(this).attr("src", "../Images/dog.jpg").animate({
+                        width: "+=100px",
+                        height: "+=100px"
+                    })
+                })
+                .mouseout(function() {
+                    $(this).attr("src", "../Images/ga.jpg").animate({
+                        width: "200px",
+                        height: "150px"
+                    })
+                })
+        })
+    </script>
+</head>
+
+<body>
+    <img src="../Images/ga.jpg">
+</body>
+
+</html>

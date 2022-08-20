@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/js06.css">
+    <title>bài 6</title>
+    <script>
+        function Dangky() {
+            var ten = document.forms.reg("txtTen").value;
+            var mk = document.forms.reg("txtPass").value;
+            var ns = document.forms.reg("txtNgaysinh").value;
+            var gt = document.forms.reg("gt").value;
+            var qt = document.forms.reg("qt").value;
+            document.forms.reg["thongtin"].value = "Chào mừng" + ten + "\n Bạn là" + gt + "\n Mật khẩu của bạn có" + mk.length + "kí tự\n" + "bạn sinh ngày " + ns + "\n  Vấn đề của bạn quan tâm là: " + qt;
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>ĐĂNG KÝ THÀNH VIÊN</h1>
+    <form id="reg" onsubmit="return Dangky()">
+        <table>
+            <tr>
+                <td>Tên đăng nhập</td>
+                <td><input type="text" name="txtTen" required></td>
+            </tr>
+            <tr>
+                <td>Mật khẩu</td>
+                <td><input type="text" name="txtPass" required></td>
+            </tr>
+            <tr>
+                <td>Ngày sinh</td>
+                <td><input type="date" name="txtNgaysinh" required></td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td><input type="radio" name="gioitinh" checked>Nam
+                    <input type="radio" name="gioitinh">Nữ
+                </td>
+            </tr>
+            <tr>
+                <td>Vấn đề bạn qua tâm</td>
+                <td><select name="qt">
+                    <option value="Kinh Tế" selected>Kinh tế</option>
+                    <option value="thể thao">thể thao</option>
+                    <option value="Văn học nghệ thuật">Văn học nghệ thuật</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Thực hiện"></td>
+                <td><input type="reset" value="Hủy"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <textarea name="thongtin" col="50" rows="6"></textarea>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#change").click(function() {
+                $("tr:odd").addClass("newBrgd");
+            });
+            $("#default").click(function() {
+                $("tr:odd").removeClass("newBrgd")
+            })
+        })
+    </script>
+</head>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    table tr th {
+        border: 1px solid green;
+        padding: 5px;
+        background-color: aqua;
+    }
+    
+    table tr td {
+        border: 1px solid red;
+        padding: 5px;
+    }
+    
+    .newBrgd {
+        background-color: aquamarine;
+    }
+</style>
+
+<body>
+    <table>
+        <caption>Bảng giá vật tư</caption>
+        <tr>
+            <th>Tên vật tư</th>
+            <th>Đơn vị tính</th>
+            <th>Đơn giá</th>
+        </tr>
+        <tr>
+            <td>cát</td>
+            <td>Khối</td>
+            <td>77,000</td>
+        </tr>
+        <tr>
+            <td>Đá</td>
+            <td>Khối</td>
+            <td>90,000</td>
+        </tr>
+        <tr>
+            <td>Xi măng Hà tiên loại 1</td>
+            <td>Bao</td>
+            <td>120,000</td>
+        </tr>
+        <tr>
+            <td>Xi măng Hà tiên loại 2</td>
+            <td>Bao</td>
+            <td>100,000</td>
+        </tr>
+    </table>
+    <p>
+        <button id="change">Đổi màu nền</button>
+        <button id="default">Màu nền mặc định</button>
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+table {
+    border: 1px solid blue;
+    width: 65%;
+}
+
+th {
+    text-align: center;
+    font-size: 25px;
+}
+
+.col1 {
+    width: 17%;
+}

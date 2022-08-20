@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .large {
+            height: 384px;
+            width: 512px;
+        }
+        
+        .medium {
+            height: 192px;
+            width: 256px;
+        }
+        
+        .small {
+            height: 77px;
+            width: 102px;
+        }
+    </style>
+    <script>
+        function resizeImg(value) {
+            document.getElementById("image").className = value;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Image resize</h1>
+    <hr>
+    <div>
+        Sacer:
+        <input type="radio" name="op" value="small" onclick="resizeImg(this.value)" checked>10%
+        <input type="radio" name="op" value="medium" onclick="resizeImg(this.value)">20%
+        <input type="radio" name="op" value="large" onclick="resizeImg(this.value)">50%
+    </div>
+    <img src="../images/pointlobos.jpg" id="image" class="large">
+</body>
+
+</html>

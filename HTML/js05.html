@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS05</title>
+</head>
+<body>
+    <script>
+        document.write("<table width = 500px border = '1px black dashed'> <caption><h2>Bảng Cửu Chương</h2></caption>");
+        document.writeln("<tbody> ");
+        var dem = 2;
+        for(var dong = 1;dong <= 2;dong++)
+        {
+            document.writeln("<tr>");
+            for(var j = 0;j < 4;j++)
+            {
+                document.writeln("<td style = 'padding-left:20px'>");
+                for(var i = 1;i <= 9;i++)
+                {
+                document.writeln(dem + " x " + i + " = " + dem * i + "<br>");
+                }
+                dem++;
+                document.writeln("</td>");
+            }
+            document.writeln("</tr>");
+        }
+        document.writeln("</tbody>");
+        document.writeln("</table>");
+    </script>
+</body>
+</html>

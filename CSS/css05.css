@@ -1,0 +1,137 @@
+* {
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header-width: 100%;
+    --header-height: 80px;
+    --item-height: 200px;
+    --item-width: 200px;
+    --font-size: 2em;
+}
+
+.header {
+    background-color: #ff0049;
+    width: var(--header-width);
+    height: var(--header-height);
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px #333;
+    text-align: center;
+    font-size: var(--font-size);
+    line-height: var(--header-height);
+    position: relative;
+    animation: header 5s linear infinite;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.item {
+    width: var(--item-width);
+    height: var(--item-height);
+    margin: 15px 30px;
+    text-align: center;
+    font-size: var(--font-size);
+    font-weight: bold;
+    line-height: var(--item-height);
+    float: left;
+}
+
+.item1 {
+    border: red solid 5px;
+    animation: slider 15s linear infinite;
+}
+
+.item2 {
+    border: blue dashed 5px;
+    border-top-right-radius: 10%;
+    border-bottom-left-radius: 10%;
+}
+
+.item3 {
+    border: #ff00ff dotted 5px;
+    border-top-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+}
+
+.item4 {
+    border: green solid 5px;
+    background-color: darkcyan;
+    animation: rotate 5s linear infinite;
+}
+
+.item2,
+.item3 {
+    background-color: aqua;
+}
+
+@keyframes header {
+    0% {
+        background-color: red;
+        font-size: 1em;
+    }
+    20% {
+        background-color: green;
+        font-size: 1.5em;
+    }
+    40% {
+        background-color: blue;
+        font-size: 2em;
+    }
+    60% {
+        background-color: aqua;
+        font-size: 2.5em;
+    }
+    80% {
+        background-color: aquamarine;
+        font-size: 3em;
+    }
+    100% {
+        background-color: cyan;
+        font-size: 3.5em;
+    }
+}
+
+@keyframes slider {
+    0% {
+        background-image: url(../images/1.jpg);
+    }
+    25% {
+        background-image: url(../images/1.jpg);
+    }
+    50% {
+        background-image: url(../images/2.jpg);
+    }
+    75% {
+        background-image: url(../images/3.jpg);
+    }
+    100% {
+        background-image: url(../images/4.jpg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(60deg);
+    }
+    20% {
+        transform: rotate(120deg);
+    }
+    40% {
+        transform: rotate(180deg);
+    }
+    60% {
+        transform: rotate(240deg);
+    }
+    80% {
+        transform: rotate(300deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
